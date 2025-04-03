@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PenCraft Pro</title>
+    <link rel="icon" type="image/logo.png" href="image/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="index-page">
+    <div class="background-wrapper">
+        <header>
+            <nav class="navbar">
+                <a href="#top" class="logo-text">PenCraft Pro</a>
+                <ul class="nav-links">
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="product.html">Product Details</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-btn" onclick="toggleDropdown()">Manuals <i class="fa fa-caret-down" style="margin-left: 5px;"></i></a>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <a href="userguide.html">User Guide</a>
+                            <a href="hardwareguide.html">Hardware Guide</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><button class="download-btn" onclick="window.location.href='download.html'">Download</button></li>
+                </ul>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">Write, Sketch, Create — Effortlessly</h1>
+                    <h2>Where Ideas Meet Technology</h2>
+                    
+                    <div class="hero-text">
+                        <p><span class="welcome">Welcome to PenCraft Pro</span>, the perfect digital notebook 
+                        for students, designed to make note-taking and sketching effortless. Whether you're jotting down lecture 
+                        notes, creating mind maps, or organizing ideas, PenCraft Pro keeps it simple and intuitive—just like 
+                        writing on paper.</p>
+                        
+                        <p>Enjoy an easy-to-use platform with essential features for organizing, saving, and accessing your notes 
+                        anytime, anywhere. Perfect for beginners, PenCraft Pro helps students focus on learning without the 
+                        complications.</p>
+                    </div>                    
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="slides">
+                            <div class="slide active">
+                                <img src="./image/image2.png" alt="Image 1">
+                            </div>
+                            <div class="slide">
+                                <img src="./image/image3.png" alt="Image 2">
+                            </div>
+                            <div class="slide">
+                                <img src="./image/image4.png" alt="Image 3">
+                            </div>
+                            <div class="slide">
+                                <img src="./image/image5.png" alt="Image 4">
+                            </div>
+                        </div>
+                        <div class="dots">
+                            <span class="dot active" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <script src="js/script.js"></script>
+            </section>
+               
+<footer>
+<div class="footer-content">
+<p>&copy; 2025 PenCraft Pro. All rights reserved.</p>
+<ul class="footer-links">
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="terms.html">Terms of Service</a></li>
+</ul>
+</div>
+</footer>
+</body>
+</html>

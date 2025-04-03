@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download</title>
+    <link rel="icon" type="image/logo.png" href="image/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="download-page">
+    <div class="background-wrapper">
+        <header>
+            <nav class="navbar">
+                <a href="#top" class="logo-text">PenCraft Pro</a>
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="product.html">Product Details</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-btn" onclick="toggleDropdown()">Manuals <i class="fa fa-caret-down" style="margin-left: 5px;"></i></a>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <a href="userguide.html">User Guide</a>
+                            <a href="hardwareguide.html">Hardware Guide</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><button class="download-btn" onclick="window.location.href='download.html'">Download</button></li>
+                </ul>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </header>
+
+    <main>
+      <section class="download-section">
+        <h1>Download PenCraft Pro</h1>
+        <p>Choose your platform and get started with PenCraft Pro today!</p>
+        <div class="download-buttons">
+          <div class="download-option">
+            <img
+              src="image/windows_11.png"
+              alt="Windows"
+              class="platform-image"
+            />
+            <center>  <a
+              href="files/penCraftPro-windows.exe"
+              download="PenCraftPro-Windows"
+              class="download-btn"
+              onclick="trackDownload('windows')"
+            ></center> 
+              Download for Windows
+            </a>
+            <p id="windows-counter" class="download-counter">Downloads: 0</p>
+          </div>
+          <div class="download-option">
+            <img src="image/mac.png" alt="macOS" class="platform-image" />
+            <center>  <a
+              href="files/penCraftPro-mac.dmg"
+              download="PenCraftPro-mac"
+              class="download-btn"
+              onclick="trackDownload('mac')"
+            >
+              Download for macOS
+            </center>
+            </a>
+            <p id="mac-counter" class="download-counter">Downloads: 0</p>
+          </div>
+          <div class="download-option">
+            <img src="image/linux.png" alt="Linux" class="platform-image" />
+           <center><a
+              href="files/penCraftPro-linux.tar.gz"
+              download="PenCraftPro-linux"
+              class="download-btn"
+              onclick="trackDownload('linux')"
+            >
+              Download for Linux
+            </a></center>
+            <p id="linux-counter" class="download-counter">Downloads: 0</p>
+          </div>
+          <div class="download-option">
+            <img
+              src="image/android-logo-png-transparent.png"
+              alt="Google Play"
+              class="platform-image"
+            />
+           <center><a
+              href="files/penCraftPro.apk"
+              download="PenCraftPro-apk"
+              class="download-btn"
+              onclick="trackDownload('apk')"
+            >
+              Download from APK file
+            </a></center> 
+            <p id="apk-counter" class="download-counter">Downloads: 0</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 PenCraft Pro. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      function trackDownload(platform) {
+        let counterElement = document.getElementById(`${platform}-counter`);
+        let currentCount = localStorage.getItem(platform);
+        currentCount = currentCount ? parseInt(currentCount) : 0;
+        currentCount += 1;
+        localStorage.setItem(platform, currentCount);
+        counterElement.textContent = `Downloads: ${currentCount}`;
+      }
+
+      window.onload = function () {
+        const platforms = ["windows", "mac", "linux", "apk"];
+        platforms.forEach((platform) => {
+          const counterElement = document.getElementById(`${platform}-counter`);
+          const storedCount = localStorage.getItem(platform);
+          if (storedCount) {
+            counterElement.textContent = `Downloads: ${storedCount}`;
+          }
+        });
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,642 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  padding-top: 60px; /* To prevent content overlap with fixed navbar */
+}
+
+.index-page,
+.features-page,
+.about-page,
+.userguide-page,
+.hardwareguide-page,
+.contact-page,
+.download-page,
+.privacy-page,
+.terms-page,
+.product-page {
+  /* Add the product-page background and color styles */
+  background: linear-gradient(to right, #5b4c68, #1f4e99);
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  background-color: #583927;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .nav-links li {
+  margin-left: 15px;
+}
+
+.navbar .nav-links li a,
+.navbar .nav-links li button {
+  text-decoration: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbar .nav-links li a:hover,
+.navbar .nav-links li button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar .nav-links li:focus-within a,
+.navbar .nav-links li:focus-within button {
+  outline: 2px solid #04aa6d; /* Visible focus state for better accessibility */
+}
+
+.navbar .nav-links .active {
+  background-color: #04aa6d;
+}
+
+.navbar .download-btn {
+  background-color: red;
+  border: none;
+  cursor: pointer;
+}
+
+/* Ensure dropdown content is hidden by default */
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #583927;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+/* When the dropdown is open, make it visible */
+.dropdown .show {
+  display: block;
+}
+
+.dropdown .dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown .dropdown-content a:hover {
+  background-color: #04aa6d;
+}
+
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle i {
+  color: #04aa6d;
+  font-size: 24px;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  animation: fadeInDown 2s;
+}
+
+.hero-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  animation: fadeInDown 2s;
+}
+
+.hero-text {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  animation: fadeInUp 2s;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.carousel {
+  width: 80%;
+  max-width: 1000px;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slides .slide {
+  min-width: 100%;
+  transition: 0.5s;
+}
+
+.slides .slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dots .dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+.dots .active {
+  background-color: #717171;
+}
+
+.feature-content {
+  padding: 20px 20px;
+}
+
+.feature-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.feature-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.feature-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.feature-item:hover {
+  transform: scale(1.05);
+}
+
+.feature-item img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.feature-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.feature-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.about-content {
+  padding: 20px 20px;
+}
+
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: auto;
+}
+
+.about-images img {
+  width: 110px;
+  height: 130px;
+  border-radius: 10%;
+  margin: 5px;
+  max-width: 100%; /* Ensure images are responsive */
+}
+
+.about-text {
+  max-width: 800px;
+}
+
+.about-text section {
+  margin-bottom: 40px;
+}
+
+.about-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.guide-content {
+  padding: 20px 20px;
+}
+
+.user-guide,
+.my-hardware {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.guide-sections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guide-sections section {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.guide-sections h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.guide-sections p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.guide-list,
+.hardware-list {
+  list-style: none;
+  padding: 0;
+}
+
+.guide-list li,
+.hardware-list li {
+  margin-bottom: 10px;
+}
+
+.related-guide {
+  margin-top: 10px;
+}
+
+.feedback-section {
+  padding: 20px 20px;
+}
+
+.feedback-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.comment-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.comment-form button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #04aa6d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.comment-form button:hover {
+  background-color: #028a50;
+}
+
+.feedback-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feedback-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.feedback-card:hover {
+  transform: scale(1.05);
+}
+
+.feedback-text {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.feedback-author h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.feedback-author p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+}
+
+.download-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.download-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.download-section p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.download-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.download-option {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  max-width: 200px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.download-option:hover {
+  transform: scale(1.05);
+}
+
+.download-option img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.download-option .download-btn {
+  width: 100%;
+}
+
+.policy-content {
+  padding: 20px 20px;
+}
+
+.policy-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.policy-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #583927;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: auto; /* Changed to relative to prevent overlap */
+  bottom: auto;
+  width: 100%;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Product Page Styles */
+.product-container {
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  max-width: 100px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 50%;
+  border-radius: 10px;
+}
+
+.product-title {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.product-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #04aa6d;
+  margin-bottom: 15px;
+}
+
+.product-btn {
+  background-color: #04aa6d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-btn:hover {
+  background-color: #038c5a;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text {
+    font-size: 0.9rem;
+  }
+
+  .feature-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-item {
+    max-width: 90%;
+  }
+
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-images img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .guide-sections section {
+    max-width: 90%;
+  }
+
+  .feedback-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .download-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .download-option {
+    max-width: 90%;
+  }
+
+  .developer {
+    text-align: center;
+    margin: 10px;
+  }
+
+  .developer img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .developer p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: white;
+  }
+}

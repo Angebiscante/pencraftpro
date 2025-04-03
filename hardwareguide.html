@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hardware Guide</title>
+    <link rel="icon" type="image/logo.png" href="image/logo.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="hardwareguide-page">
+    <header>
+      <nav class="navbar">
+        <a href="#top" class="logo-text">PenCraft Pro</a>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="product.html">Product Details</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-btn" onclick="toggleDropdown()"
+              >Manuals <i class="fa fa-caret-down" style="margin-left: 5px"></i
+            ></a>
+            <div class="dropdown-content" id="dropdownContent">
+              <a href="userguide.html">User Guide</a>
+              <a href="hardwareguide.html" class="active">Hardware Guide</a>
+            </div>
+          </li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li>
+            <button
+              class="download-btn"
+              onclick="window.location.href='download.html'"
+            >
+              Download
+            </button>
+          </li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="guide-content">
+        <h1 class="my-hardware">Hardware Guide</h1>
+        <div class="guide-sections">
+          <section>
+            <h2>Installing PenCraft Pro</h2>
+            <p>Follow these steps to install PenCraft Pro on your device:</p>
+            <ul class="hardware-list">
+              <li>
+                Visit PenCraft Pro official
+                <a href="bit.ly/pencraftpro">PenCraft Pro</a> website.
+              </li>
+              <li>Click the Download page</li>
+              <li>Choose what operating system you will to download the app</li>
+              <li>Open the app and create your account</li>
+            </ul>
+            <p class="related-guide">
+              For software setup instructions, visit our
+              <a href="userguide.html">User Guide</a>.
+            </p>
+          </section>
+          <section>
+            <h2>PenCraft Pro supports the following OS versions:</h2>
+            <p>Check which OS versions work best with PenCraft Pro:</p>
+            <ul class="hardware-list">
+              <li>Windows 8, 10, 11</li>
+              <li>Linux (Ubuntu) and newer</li>
+              <li>macOS Catalina and newer</li>
+              <li>APK (Android)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Stylus Support</h2>
+            <ul class="hardware-list">
+              <li>
+                PenCraft Pro is compatible with any stylus that works on
+                touchscreens, ensuring universal support for a wide range of
+                devices.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Using PenCraft Pro</h2>
+            <p>Learn how to use PenCraft Pro with your device:</p>
+            <ul class="hardware-list">
+              <li>Open the app and sign in to your account</li>
+              <li>Tap the "+" button to create a new note</li>
+              <li>Use the toolbar to access drawing and writing tools</li>
+              <li>Save your notes to the cloud for easy access</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Troubleshooting</h2>
+            <p>Common issues and solutions:</p>
+            <ul class="hardware-list">
+              <li>
+                App not installing: Check your internet connection and available
+                storage
+              </li>
+              <li>
+                Stylus not working: Ensure your stylus is charged and compatible
+              </li>
+              <li>
+                Sync issues: Make sure you are signed in to your account and
+                connected to the internet
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 PenCraft Pro. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
