@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookies Policy - PenCraft Pro</title>
+    <link rel="icon" type="logo" href="images/logo.png" />
+    <link rel="stylesheet" href="bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <style>
+      .cookies-policy {
+        margin-top: 2rem;
+        padding: 2rem;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .cookies-policy h2 {
+        color: brown;
+        text-align: center;
+      }
+
+      .cookies-policy h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .cookies-policy h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .cookies-policy p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .cookies-policy ul {
+        margin-left: 1.5rem;
+        list-style-type: disc;
+      }
+
+      .cookies-policy ul li {
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="home.html">PenCraft Pro</a>
+        
+    </nav>
+
+    <!-- Cookies Policy Section -->
+    <section class="container cookies-policy">
+      <h1>Cookies Policy</h1>
+      <p>Last updated: April 15, 2025</p>
+      <p>
+        This Cookies Policy explains what Cookies are and how We use them. You
+        should read this policy so You can understand what type of cookies We
+        use, or the information We collect using Cookies and how that
+        information is used.
+      </p>
+      <p>
+        Cookies do not typically contain any information that personally
+        identifies a user, but personal information that we store about You may
+        be linked to the information stored in and obtained from Cookies.
+      </p>
+      <p>
+        For further information on how We use, store, and keep your personal
+        data secure, see our <a href="privacy.html">Privacy Policy</a>.
+      </p>
+
+      <h2>What are Cookies?</h2>
+      <p>
+        Cookies are small text files that are placed on your device when you
+        visit a website. They help the website remember your preferences and
+        improve your experience.
+      </p>
+
+      <h2>How We Use Cookies</h2>
+      <p>We use Cookies for the following purposes:</p>
+      <ul>
+        <li>
+          <strong>Necessary Cookies:</strong> These Cookies are essential for
+          the website to function properly.
+        </li>
+        <li>
+          <strong>Preference Cookies:</strong> These Cookies store your
+          preferences.
+        </li>
+        <li>
+          <strong>Analytics Cookies:</strong> These Cookies help us understand
+          how visitors interact with our website.
+        </li>
+      </ul>
+
+      <h2>Your Choices Regarding Cookies</h2>
+      <p>
+        If You prefer to avoid the use of Cookies on the Website, You must first
+        disable the use of Cookies in your browser and then delete the Cookies
+        saved in your browser associated with this website. You may use this
+        option for preventing the use of Cookies at any time.
+      </p>
+
+      <p>
+        If You do not accept Our Cookies, You may experience some inconvenience
+        in your use of the Website, and some features may not function properly.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 PenCraft Pro. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="cookies.html">Cookies Policy</a></li>
+
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+   
+
+    <!-- Cookie Consent Modal -->
+    <div
+      class="modal fade"
+      id="cookieModal"
+      tabindex="-1"
+      aria-labelledby="cookieModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cookieModalLabel">We Use Cookies</h5>
+          </div>
+          <div class="modal-body">
+            <p>
+              We use cookies to enhance your browsing experience, analyze site
+              traffic, and personalize content. By clicking "Accept All," you
+              consent to our use of cookies. You can customize your preferences
+              by clicking "Customize."
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="handleCookieConsent('customize')"
+            >
+              Customize
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="handleCookieConsent('accept')"
+            >
+              Accept All
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

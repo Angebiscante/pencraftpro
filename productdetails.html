@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link rel="icon" type="logo" href="images/logo.png" />
+    <link rel="stylesheet" href="bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="home.html">PenCraft Pro</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="features.html">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="productdetails.html"
+                >Product Details</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="manualsDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Manuals
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="manualsDropdown">
+                <li>
+                  <a class="dropdown-item" href="userguide.html">User Guide</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="hardwareguide.html"
+                    >Hardware Guide</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactus.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="download.html">Download</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Product Details Content -->
+    <section class="container mt-5">
+      <h1>Product Details</h1>
+      <p>
+        Explore the specifications, features, and details of our flagship
+        product.
+      </p>
+
+      <!-- Product Cards -->
+      <div class="product-container">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <img src="images/stylus-pen.jpeg" alt="3-in-1 Stylus Pen" />
+          <h2 class="product-title">3-in-1 Stylus Pen</h2>
+          <br />
+          <p class="product-price">₱513.00</p>
+          <p class="product-description">
+            This versatile 3-in-1 stylus pen is perfect for digital devices,
+            offering a smooth and precise writing or drawing experience. It
+            includes a ballpoint pen, stylus tip for touchscreens, and a
+            built-in LED light for added functionality.
+          </p>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <img src="images/raspberry-pi-5.jpeg" alt="Raspberry Pi 5" />
+          <h2 class="product-title">Raspberry Pi 5 (8GB RAM, 128GB Storage)</h2>
+          <p class="product-price">₱9,124.00</p>
+          <p class="product-description">
+            The Raspberry Pi 5 with 8GB of RAM and 128GB storage offers
+            impressive power and performance for a wide range of DIY projects
+            and tasks. Its compact design and versatile features make it ideal
+            for both hobbyists and professionals looking to create custom
+            computing solutions.
+          </p>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <img
+            src="images/touchscreen-monitor.jpeg"
+            alt="10.1-inch Touchscreen Monitor"
+          />
+          <h2 class="product-title">10.1-inch Touchscreen Monitor</h2>
+          <p class="product-price">₱5,704.00</p>
+          <p class="product-description">
+            This 10.1-inch touchscreen monitor offers high-definition display
+            quality and responsive touch capabilities. It’s perfect for creating
+            interactive displays or using with single-board computers like the
+            Raspberry Pi, providing a dynamic and user-friendly interface.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 PenCraft Pro. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

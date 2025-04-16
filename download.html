@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download PenCraft Pro</title>
+    <link rel="icon" type="logo" href="images/logo.png" />
+    <link rel="stylesheet" href="bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <style></style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="home.html">PenCraft Pro</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="features.html">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="productdetails.html">Product Details</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="manualsDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Manuals
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="manualsDropdown">
+                <li>
+                  <a class="dropdown-item" href="userguide.html">User Guide</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="hardwareguide.html"
+                    >Hardware Guide</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactus.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="download.html">Download</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Download Section -->
+    <section class="container download-section">
+      <h1>Download PenCraft Pro</h1>
+      <p class="text-center">
+        Select your operating system below to download the latest version of
+        PenCraft Pro.
+      </p>
+
+      <div class="download-buttons">
+        <!-- Android -->
+        <div class="download-card">
+          <img src="images/android.png" alt="Android Icon" />
+          <a
+            href="downloads/PenCraftPro.apk"
+            class="android"
+            download
+            onclick="updateDownloadCount('android')"
+            >Download for Android (APK)</a
+          >
+        </div>
+
+        <!-- Linux -->
+        <div class="download-card">
+          <img src="images/linux.png" alt="Linux Icon" />
+          <a
+            href="downloads/PenCraftPro.tar.gz"
+            class="linux"
+            download
+            onclick="updateDownloadCount('linux')"
+            >Download for Linux</a
+          >
+        </div>
+
+        <!-- Windows -->
+        <div class="download-card">
+          <img src="images/windows.png" alt="Windows Icon" />
+          <a
+            href="downloads/PenCraftPro.exe"
+            class="windows"
+            download
+            onclick="updateDownloadCount('windows')"
+            >Download for Windows</a
+          >
+        </div>
+
+        <!-- macOS -->
+        <div class="download-card">
+          <img src="images/mac.png" alt="macOS Icon" />
+          <a
+            href="downloads/PenCraftPro.dmg"
+            class="macos"
+            download
+            onclick="updateDownloadCount('macos')"
+            >Download for macOS</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Stats Section -->
+    <section class="container download-stats">
+      <h2>Download Statistics</h2>
+      <div class="stats">
+        <div class="stat-item">
+          <p>Android Downloads:<br /><span id="android-count">1,000+</span></p>
+        </div>
+        <div class="stat-item">
+          <p>Linux Downloads:<br /><span id="linux-count">850+</span></p>
+        </div>
+        <div class="stat-item">
+          <p>Windows Downloads:<br /><span id="windows-count">1,200+</span></p>
+        </div>
+        <div class="stat-item">
+          <p>macOS Downloads:<br /><span id="macos-count">950+</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 PenCraft Pro. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="cookies.html">Cookies Policy</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const repoOwner = "shshshangelo";
+      const repoName = "YOUR_REPO_NAME"; // Replace with your GitHub repo name
+      const filePath = "data/downloads.json"; // Path to the JSON file in your repo
+      const accessToken = "YOUR_PERSONAL_ACCESS_TOKEN"; // Replace with your GitHub Personal Access Token
+
+      // Fetch download counts from GitHub
+      async function fetchDownloadCounts() {
+        const response = await fetch(
+          `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
+        const data = await response.json();
+        const content = JSON.parse(atob(data.content));
+        updateUI(content);
+      }
+
+      // Helper function to format numbers as "1,000+"
+      function formatNumberWithPlus(num) {
+        return num.toLocaleString() + "+";
+      }
+
+      // Update UI with fetched counts
+      function updateUI(content) {
+        document.getElementById("android-count").textContent =
+          formatNumberWithPlus(content.android);
+        document.getElementById("linux-count").textContent =
+          formatNumberWithPlus(content.linux);
+        document.getElementById("windows-count").textContent =
+          formatNumberWithPlus(content.windows);
+        document.getElementById("macos-count").textContent =
+          formatNumberWithPlus(content.macos);
+      }
+
+      // Update download count in GitHub
+      async function updateDownloadCount(os) {
+        const response = await fetch(
+          `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
+        const data = await response.json();
+        const content = JSON.parse(atob(data.content));
+        content[os] += 1;
+
+        await fetch(
+          `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
+          {
+            method: "PUT",
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              message: `Update ${os} download count`,
+              content: btoa(JSON.stringify(content)),
+              sha: data.sha,
+            }),
+          }
+        );
+
+        fetchDownloadCounts(); // Refresh UI
+      }
+
+      // Initialize
+      fetchDownloadCounts();
+    </script>
+  </body>
+</html>
