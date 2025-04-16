@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport(Randomized ID: e4f7a9c2) content="width=device-width,
-    initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Download PenCraft Pro</title>
     <link rel="icon" type="logo" href="images/logo.png" />
     <link rel="stylesheet" href="bootstrap-5.3.5-dist/css/bootstrap.min.css" />
@@ -52,9 +51,7 @@
                   <a class="dropdown-item" href="userguide.html">User Guide</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="hardwareguide.html"
-                    >Hardware Guide</a
-                  >
+                  <a class="dropdown-item" href="hardwareguide.html">Hardware Guide</a>
                 </li>
               </ul>
             </li>
@@ -169,8 +166,7 @@
       const repoName = "pencraftpro";
       const filePath = "data/downloads.json";
       // Base64-encoded GitHub access token
-      const encodedAccessToken =
-        "Z2hwX2tJcWpuZHY3bXZTWTdISXBkYnpmQWZ2dFd5eTQ2RjBrbEhLYw=="; // Replace with your Base64-encoded token
+      const encodedAccessToken = "YOUR_BASE64_ENCODED_TOKEN"; // Replace with Base64-encoded new token
       const accessToken = atob(encodedAccessToken); // Decode at runtime
 
       // Fetch download counts from GitHub
@@ -181,6 +177,7 @@
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
+                Accept: "application/vnd.github.v3+json",
               },
             }
           );
@@ -221,6 +218,7 @@
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
+                Accept: "application/vnd.github.v3+json",
               },
             }
           );
@@ -235,11 +233,12 @@
               headers: {
                 Authorization: `Bearer ${accessToken}`,
                 "Content-Type": "application/json",
+                Accept: "application/vnd.github.v3+json",
               },
               body: JSON.stringify({
                 message: `Update ${os} download count`,
                 content: btoa(JSON.stringify(content)),
-                sha: dataSha,
+                sha: data.sha,
               }),
             }
           );
