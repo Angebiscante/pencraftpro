@@ -7,6 +7,65 @@
     <link rel="icon" type="logo" href="images/logo.png" />
     <link rel="stylesheet" href="bootstrap-5.3.5-dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
+
+    <style>
+      /* Mobile-specific modal styles */
+      @media (max-width: 576px) {
+        .custom-modal {
+          margin: 0.5rem;
+          max-width: 95%;
+        }
+        .modal-body {
+          font-size: 0.9rem;
+          max-height: 50vh;
+          overflow-y: auto;
+        }
+        .modal-footer .btn {
+          min-width: 120px;
+          padding: 0.5rem 1rem;
+          font-size: 0.9rem;
+          margin: 0.5rem;
+        }
+      }
+
+      /* Ensure high contrast for buttons */
+      .btn-primary {
+        background-color: #0052cc; /* Darker blue for better contrast */
+        border-color: #0052cc;
+      }
+
+      .btn-secondary {
+        background-color: #4b5e6d; /* Darker gray for better contrast */
+        border-color: #4b5e6d;
+      }
+
+      /* Fallback banner styles */
+      #cookieFallback {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #333;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+        z-index: 1000;
+      }
+
+      #cookieFallback a {
+        color: #0d6efd;
+        text-decoration: underline;
+      }
+
+      #cookieFallback button {
+        background: #0d6efd;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <!-- Navbar -->
@@ -159,7 +218,7 @@
     <!-- Footer -->
     <footer>
       <div class="footer-content">
-        <p>&copy; 2025 PenCraft Pro. All rights reserved.</p>
+        <p>© 2025 PenCraft Pro. All rights reserved.</p>
         <ul class="footer-links">
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
@@ -167,10 +226,6 @@
         </ul>
       </div>
     </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/home-cookies.js"></script>
 
     <!-- Cookie Consent Modal -->
     <div
@@ -180,10 +235,16 @@
       aria-labelledby="cookieModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog custom-modal">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="cookieModalLabel">We Use Cookies</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
             <p>
@@ -191,6 +252,7 @@
               traffic, and personalize content. By clicking "Accept All," you
               consent to our use of cookies. You can customize your preferences
               by clicking "Customize."
+              <a href="cookies.html">Learn more about our Cookies Policy</a>.
             </p>
           </div>
           <div class="modal-footer">
@@ -212,5 +274,72 @@
         </div>
       </div>
     </div>
+
+    <!-- Fallback Cookie Banner -->
+    <div id="cookieFallback">
+      <p>
+        We use cookies to enhance your experience.
+        <a href="cookies.html">Learn more</a>.
+      </p>
+      <button onclick="handleCookieConsent('accept')">Accept</button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Inline Cookie Consent JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Check if cookie consent is already given
+        if (!localStorage.getItem("cookieConsent")) {
+          // Show modal
+          const cookieModal = new bootstrap.Modal(
+            document.getElementById("cookieModal"),
+            {
+              backdrop: "static", // Prevent closing without a choice
+              keyboard: false, // Disable ESC key
+            }
+          );
+          cookieModal.show();
+
+          // Show fallback banner as a backup
+          document.getElementById("cookieFallback").style.display = "block";
+        }
+      });
+
+      function handleCookieConsent(choice) {
+        if (choice === "accept") {
+          localStorage.setItem("cookieConsent", "accepted");
+          // Enable analytics or other cookies (placeholder)
+          console.log("Cookies accepted");
+          // Hide fallback banner
+          document.getElementById("cookieFallback").style.display = "none";
+        } else if (choice === "customize") {
+          // Placeholder for customization logic
+          console.log("Customize cookie preferences");
+          // Example: Show a form to toggle cookie types
+          alert("Customize cookie settings (implement form here)");
+        }
+
+        // Hide modal
+        const cookieModal = bootstrap.Modal.getInstance(
+          document.getElementById("cookieModal")
+        );
+        if (cookieModal) {
+          cookieModal.hide();
+        }
+      }
+
+      // Handle modal close button (re-show modal on next load)
+      document
+        .getElementById("cookieModal")
+        .addEventListener("hidden.bs.modal", () => {
+          if (!localStorage.getItem("cookieConsent")) {
+            console.log(
+              "Modal closed without consent; will show again on next load"
+            );
+          }
+        });
+    </script>
   </body>
 </html>
