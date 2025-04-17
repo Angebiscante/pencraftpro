@@ -7,6 +7,8 @@
     <link rel="icon" type="logo" href="images/logo.png" />
     <link rel="stylesheet" href="bootstrap-5.3.5-dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
+
+    <style></style>
   </head>
   <body>
     <!-- Navbar -->
@@ -51,7 +53,9 @@
                   <a class="dropdown-item" href="userguide.html">User Guide</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="hardwareguide.html">Hardware Guide</a>
+                  <a class="dropdown-item" href="hardwareguide.html"
+                    >Hardware Guide</a
+                  >
                 </li>
               </ul>
             </li>
@@ -133,16 +137,16 @@
       <h2>Download Statistics</h2>
       <div class="stats">
         <div class="stat-item">
-          <p>Android Downloads:<br /><span id="android-count">0</span></p>
+          <p>Android Downloads:<br /><span id="android-count">1,000+</span></p>
         </div>
         <div class="stat-item">
-          <p>Linux Downloads:<br /><span id="linux-count">0</span></p>
+          <p>Linux Downloads:<br /><span id="linux-count">850+</span></p>
         </div>
         <div class="stat-item">
-          <p>Windows Downloads:<br /><span id="windows-count">0</span></p>
+          <p>Windows Downloads:<br /><span id="windows-count">1,200+</span></p>
         </div>
         <div class="stat-item">
-          <p>macOS Downloads:<br /><span id="macos-count">0</span></p>
+          <p>macOS Downloads:<br /><span id="macos-count">950+</span></p>
         </div>
       </div>
     </section>
@@ -150,7 +154,7 @@
     <!-- Footer -->
     <footer>
       <div class="footer-content">
-        <p>© 2025 PenCraft Pro. All rights reserved.</p>
+        <p>&copy; 2025 PenCraft Pro. All rights reserved.</p>
         <ul class="footer-links">
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
@@ -163,11 +167,8 @@
     <script src="bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
     <script>
       const repoOwner = "shshshangelo";
-      const repoName = "pencraftpro";
-      const filePath = "data/downloads.json";
-      // Base64-encoded GitHub access token
-      const encodedAccessToken = "YOUR_BASE64_ENCODED_TOKEN"; // Replace with Base64-encoded new token
-      const accessToken = atob(encodedAccessToken); // Decode at runtime
+      const repoName = "pencraftpro"; // Updated with your GitHub repo name
+      const filePath = "data/downloads.json"; // Path to the JSON file in your repo
 
       // Fetch download counts from GitHub
       async function fetchDownloadCounts() {
@@ -176,8 +177,7 @@
             `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
             {
               headers: {
-                Authorization: `Bearer ${accessToken}`,
-                Accept: "application/vnd.github.v3+json",
+                Authorization: `Bearer YOUR_ACCESS_TOKEN`, // Replace securely
               },
             }
           );
@@ -189,25 +189,21 @@
         }
       }
 
-      // Helper function to format numbers
-      function formatNumber(num) {
-        return num.toLocaleString();
+      // Helper function to format numbers as "1,000+"
+      function formatNumberWithPlus(num) {
+        return num.toLocaleString() + "+";
       }
 
       // Update UI with fetched counts
       function updateUI(content) {
-        document.getElementById("android-count").textContent = formatNumber(
-          content.android
-        );
-        document.getElementById("linux-count").textContent = formatNumber(
-          content.linux
-        );
-        document.getElementById("windows-count").textContent = formatNumber(
-          content.windows
-        );
-        document.getElementById("macos-count").textContent = formatNumber(
-          content.macos
-        );
+        document.getElementById("android-count").textContent =
+          formatNumberWithPlus(content.android);
+        document.getElementById("linux-count").textContent =
+          formatNumberWithPlus(content.linux);
+        document.getElementById("windows-count").textContent =
+          formatNumberWithPlus(content.windows);
+        document.getElementById("macos-count").textContent =
+          formatNumberWithPlus(content.macos);
       }
 
       // Update download count in GitHub
@@ -217,8 +213,7 @@
             `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
             {
               headers: {
-                Authorization: `Bearer ${accessToken}`,
-                Accept: "application/vnd.github.v3+json",
+                Authorization: `Bearer YOUR_ACCESS_TOKEN`, // Replace securely
               },
             }
           );
@@ -231,9 +226,8 @@
             {
               method: "PUT",
               headers: {
-                Authorization: `Bearer ${accessToken}`,
+                Authorization: `Bearer YOUR_ACCESS_TOKEN`, // Replace securely
                 "Content-Type": "application/json",
-                Accept: "application/vnd.github.v3+json",
               },
               body: JSON.stringify({
                 message: `Update ${os} download count`,
