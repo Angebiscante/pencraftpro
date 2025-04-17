@@ -219,57 +219,53 @@ footer {
   line-height: 1.5;
 }
 
-/* Product Details Section */
+/* Product Details */
+
 .product-container {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
-  margin-top: 2rem;
+  justify-items: center;
 }
 
 .product-card {
+  background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
   padding: 1.5rem;
-  transition: transform 0.3s, box-shadow 0.3s;
-  width: 30%; /* Ensures three cards fit in one row */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .product-card img {
-  width: 100%; /* Ensure the image takes full width of the container */
-  height: 200px; /* Set a fixed height for uniform display */
-  object-fit: cover; /* Maintain aspect ratio and crop excess */
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
 
 .product-title {
-  font-family: "Arial", sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: brown;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .product-price {
-  font-family: "Verdana", sans-serif;
   font-size: 1.2rem;
-  color: #007bff;
+  color: #28a745;
   margin-bottom: 1rem;
 }
 
 .product-description {
-  font-family: "Verdana", sans-serif;
   font-size: 1rem;
-  color: #555;
+  color: #666;
   line-height: 1.5;
 }
 
